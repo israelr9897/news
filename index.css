@@ -6,28 +6,25 @@
 
 body {
     background-color: rgb(223, 240, 253);
-    /* width: 100vw; */
-    /* height: 100vh; */
     display: flex;
     justify-content: center;
 }
 
 .root {
     width: 80%;
-    /* height: 100%; */
+    height: 100%;
+    min-height: 500px;
     background-color: white;
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5%;
-    /* padding: 0 5%; */
-    
+    border-radius: 15px;
+    padding-bottom: 20px;
+
 }
 
 .nav {
-    /* border: 1px black solid;
-    border-radius: 15px; */
     width: 100%;
     height: 8vh;
     padding: 1%;
@@ -36,12 +33,12 @@ body {
     justify-content: space-between;
     gap: 5%;
     font-size: 17px;
-    font-family: Arial, Helvetica, sans-serif;
     position: sticky;
     top: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.links{
+.links {
     width: 20%;
     display: flex;
     justify-content: space-between;
@@ -50,7 +47,7 @@ body {
 
 }
 
-.logo{
+.logo {
     cursor: pointer;
     width: 8%;
     height: 100%;
@@ -61,82 +58,146 @@ body {
     width: auto;
 }
 
-.posts{
+.links a:hover {
+    cursor: pointer;
+}
+
+.posts {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 5vh;
-    /* border: 1px black solid; */
-    /* width: 90%; */
-    height: 95%;
-    
-    
+    height: 1100%;
+    margin-top: 20px;
+
+
 }
 
-.post{
+.post {
     width: 45%;
-    height: 25vh;
+    min-height: 25vh;
     border: 1px black solid;
     border-radius: 15px;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 40% 60%;
+    grid-template-rows: 50% 50%;
     grid-template-areas:
-    "img-post   author"
-    "img-post   titel";
+        "img-post   author"
+        "img-post   titel";
     padding: 2%;
     gap: 2%;
-    /* background-color: aliceblue; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
 }
-.post:hover{
+
+.post:hover {
     border: 1px rgb(120, 120, 120) solid;
     box-shadow: rgba(10, 10, 10, 8.16) 10px 10px 36px 0px, rgba(10, 10, 10, 0.06) 0px 0px 0px 1px;
     background-color: rgb(232, 244, 255);
     cursor: pointer;
 }
 
-.img-post{
+.img-post {
     grid-area: img-post;
-    /* border: 1px black solid; */
     height: 100%;
     width: 100%;
-    
+
 }
 
-.author{
+.author,
+.description {
     grid-area: author;
-    /* border: 1px black solid; */
     font-weight: 800;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    padding: 3px;
+    font-size: 1.2em;
+    overflow: auto;
+
 }
-.title{
+
+.title,
+.content {
+    padding: 3px;
     grid-area: titel;
-    /* border: 1px black solid; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     text-align: center;
-    
+    font-size: 1em;
+    overflow: auto;
+
 }
 
-.text{
-    
-}
-
-.full-post{
+.one-post {
     width: 100%;
-    border: 1px black solid;
+    height: 100%;
+    min-width: 600px;
     border-radius: 15px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 40% 60%;
     grid-template-areas:
-    "img-post   author"
-    "img-post   titel";
+        "img-post   author"
+        "img-post   titel";
     padding: 2%;
     gap: 2%;
+}
+
+form {
+    width: 60%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 2% 0;
+    padding: 2% 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form>div {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+}
+
+form>button {
+    width: 90%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 7px;
+    border: 1px black solid;
+    background-color: rgb(170, 217, 255);
+
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: rgba(170, 217, 255, 0.662);
+}
+
+div>input {
+    height: 40px;
+    padding: 5px;
+}
+
+div>input,
+div>textarea {
+    border-radius: 7px;
+    background-color: rgb(242, 248, 253);
+    border: 1px black solid;
+}
+
+.inputLabelImg {
+    display: flex;
+    flex-direction: row;
+}
+
+.inputLabelImg>input {
+    border: 0px black solid;
+    background-color: white;
 }
